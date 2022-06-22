@@ -1,0 +1,363 @@
+getgenv().autoStrength = false;
+getgenv().autoDurability = false;
+getgenv().autoAgility = false;
+getgenv().autoNen = false;
+getgenv().areatrain = false;
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Nen Fighting Simulator", "BloodTheme")
+local Main = Window:NewTab("Main")
+local MainSection = Main:NewSection("Main")
+local TelePorts = Window:NewTab("Teleport")
+local StrengthSec = TelePorts:NewSection("Strength")
+local DurabilitySec = TelePorts:NewSection("Durability")
+local AgilitySec = TelePorts:NewSection("Agility")
+local NenSec = TelePorts:NewSection("Nen")
+local Credit = Window:NewTab("Credits")
+local CreditSec = Credit:NewSection("Credits")
+CreditSec:NewLabel("Credits to velone#0857")
+MainSection:NewToggle("Auto Strength", "Auto trains strength", function(v)
+    getgenv().autoStrength = v
+    spawn(function()
+        while getgenv().autoStrength == true do
+            wait()
+            local args = {
+                [1] = "str"
+            }
+            
+            game:GetService("ReplicatedStorage").Remotes.train:FireServer(unpack(args))
+end
+end)
+end)
+MainSection:NewToggle("Auto Durability", "Auto trains durability", function(v)
+        getgenv().autoDurability = v
+        spawn(function()
+            while getgenv().autoDurability == true do
+                wait()
+local args = {
+    [1] = "dur"
+}
+
+game:GetService("ReplicatedStorage").Remotes.train:FireServer(unpack(args))
+
+            end
+
+    end)
+end)
+MainSection:NewToggle("Auto Agility", "Auto trains agility", function(v)
+    getgenv().autoAgility = v
+    spawn(function()
+        while getgenv().autoAgility == true do
+            wait()
+local args = {
+    [1] = "agi"
+}
+
+game:GetService("ReplicatedStorage").Remotes.train:FireServer(unpack(args))
+
+        end
+end)
+end)
+MainSection:NewToggle("Auto Nen", "Auto trains Nen", function(v)
+    getgenv().autoNen = v
+    spawn(function()
+    while getgenv().autoNen == true do
+        wait()
+local args = {
+    [1] = "nen"
+}
+
+game:GetService("ReplicatedStorage").Remotes.train:FireServer(unpack(args))
+
+    end
+end)
+end)
+
+StrengthSec:NewButton("Gym(No Req Str)", "5x Strength", function()
+    function teleportTO(placeCFrame)
+        local player = game.Players.LocalPlayer;
+        if player.Character then
+        player.Character.HumanoidRootPart.CFrame = placeCFrame;
+        end
+    end
+    teleportTO(game:GetService("Workspace").Zones.GymZone.CFrame)
+    
+    function teleportZone(zone)
+        if game:GetService("Workspace").Zones:FindFirstChild(zone) then
+            teleportTO(game:GetService("Workspace").Zones[zone].GymZone.CFrame)
+    end
+    end
+    
+    teleportZone('GymZone')
+end)
+StrengthSec:NewButton("Gong's House(10k Str)", "10x Strength", function()
+    function teleportTO(placeCFrame)
+        local player = game.Players.LocalPlayer;
+        if player.Character then
+        player.Character.HumanoidRootPart.CFrame = placeCFrame;
+        end
+    end
+    teleportTO(game:GetService("Workspace").Zones.GonHouseZone.CFrame)
+    
+    function teleportZone(zone)
+        if game:GetService("Workspace").Zones:FindFirstChild(zone) then
+            teleportTO(game:GetService("Workspace").Zones[zone].GonHouseZone.CFrame)
+    end
+    end
+    
+    teleportZone('GonHouseZone')
+end)
+StrengthSec:NewButton("Arm Wrestling(30k Str)", "20x Strength", function()
+    function teleportTO(placeCFrame)
+        local player = game.Players.LocalPlayer;
+        if player.Character then
+        player.Character.HumanoidRootPart.CFrame = placeCFrame;
+        end
+    end
+    teleportTO(game:GetService("Workspace").Zones.ArmWrestlingZone.CFrame)
+    
+    function teleportZone(zone)
+        if game:GetService("Workspace").Zones:FindFirstChild(zone) then
+            teleportTO(game:GetService("Workspace").Zones[zone].ArmWrestlingZone.CFrame)
+    end
+    end
+    
+    teleportZone('ArmWrestlingZone')
+end)
+StrengthSec:NewButton("Troupe Standoff(1M Str)", "50x Strength", function()
+    function teleportTO(placeCFrame)
+        local player = game.Players.LocalPlayer;
+        if player.Character then
+        player.Character.HumanoidRootPart.CFrame = placeCFrame;
+        end
+    end
+    teleportTO(game:GetService("Workspace").Zones.StandoffZone.CFrame)
+    
+    function teleportZone(zone)
+        if game:GetService("Workspace").Zones:FindFirstChild(zone) then
+            teleportTO(game:GetService("Workspace").Zones[zone].StandoffZone.CFrame)
+    end
+    end
+    
+    teleportZone('StandoffZone')
+end)
+StrengthSec:NewButton("Trick Tower(50M Str)", "100x Strength", function()
+    function teleportTO(placeCFrame)
+        local player = game.Players.LocalPlayer;
+        if player.Character then
+        player.Character.HumanoidRootPart.CFrame = placeCFrame;
+        end
+    end
+    teleportTO(game:GetService("Workspace").Zones.TrickZone.CFrame)
+    
+    function teleportZone(zone)
+        if game:GetService("Workspace").Zones:FindFirstChild(zone) then
+            teleportTO(game:GetService("Workspace").Zones[zone].TrickZone.CFrame)
+    end
+    end
+    
+    teleportZone('TrickZone')
+end)
+StrengthSec:NewButton("Town of Prizes(1B Str)", "400x Strength", function()
+    function teleportTO(placeCFrame)
+        local player = game.Players.LocalPlayer;
+        if player.Character then
+        player.Character.HumanoidRootPart.CFrame = placeCFrame;
+        end
+    end
+    teleportTO(game:GetService("Workspace").Zones.PrizeZone.CFrame)
+    
+    function teleportZone(zone)
+        if game:GetService("Workspace").Zones:FindFirstChild(zone) then
+            teleportTO(game:GetService("Workspace").Zones[zone].PrizeZone.CFrame)
+    end
+    end
+    
+    teleportZone('PrizeZone')
+end)
+DurabilitySec:NewButton("Gym(No Req Dur)", "5x Durability", function()
+    function teleportTO(placeCFrame)
+        local player = game.Players.LocalPlayer;
+        if player.Character then
+        player.Character.HumanoidRootPart.CFrame = placeCFrame;
+        end
+    end
+    teleportTO(game:GetService("Workspace").Zones.GymZone.CFrame)
+    
+    function teleportZone(zone)
+        if game:GetService("Workspace").Zones:FindFirstChild(zone) then
+            teleportTO(game:GetService("Workspace").Zones[zone].GymZone.CFrame)
+    end
+    end
+    
+    teleportZone('GymZone')
+end)
+DurabilitySec:NewButton("Monster's Swamp(10k Dur)", "10x Durability", function()
+    function teleportTO(placeCFrame)
+        local player = game.Players.LocalPlayer;
+        if player.Character then
+        player.Character.HumanoidRootPart.CFrame = placeCFrame;
+        end
+    end
+    teleportTO(game:GetService("Workspace").Zones.SwampZone.CFrame)
+    
+    function teleportZone(zone)
+        if game:GetService("Workspace").Zones:FindFirstChild(zone) then
+            teleportTO(game:GetService("Workspace").Zones[zone].SwampZone.CFrame)
+    end
+    end
+    
+    teleportZone('SwampZone')
+end)
+DurabilitySec:NewButton("Nen Impact Crater(30k Dur)", "20x Durability", function()
+    function teleportTO(placeCFrame)
+        local player = game.Players.LocalPlayer;
+        if player.Character then
+        player.Character.HumanoidRootPart.CFrame = placeCFrame;
+        end
+    end
+    teleportTO(game:GetService("Workspace").Zones.NenImpactZone.CFrame)
+    
+    function teleportZone(zone)
+        if game:GetService("Workspace").Zones:FindFirstChild(zone) then
+            teleportTO(game:GetService("Workspace").Zones[zone].NenImpactZone.CFrame)
+    end
+    end
+    
+    teleportZone('NenImpactZone')
+end)
+DurabilitySec:NewButton("Icy Lake(1M Dur)", "50x Durability", function()
+    function teleportTO(placeCFrame)
+        local player = game.Players.LocalPlayer;
+        if player.Character then
+        player.Character.HumanoidRootPart.CFrame = placeCFrame;
+        end
+    end
+    teleportTO(game:GetService("Workspace").Zones.IceRuinsZone.CFrame)
+    
+    function teleportZone(zone)
+        if game:GetService("Workspace").Zones:FindFirstChild(zone) then
+            teleportTO(game:GetService("Workspace").Zones[zone].IceRuinsZone.CFrame)
+    end
+    end
+    
+    teleportZone('IceRuinsZone')
+end)
+DurabilitySec:NewButton("Zevil Island(50M Dur)", "100x Durability", function()
+    function teleportTO(placeCFrame)
+        local player = game.Players.LocalPlayer;
+        if player.Character then
+        player.Character.HumanoidRootPart.CFrame = placeCFrame;
+        end
+    end
+    teleportTO(game:GetService("Workspace").Zones.ZevilZone.CFrame)
+    
+    function teleportZone(zone)
+        if game:GetService("Workspace").Zones:FindFirstChild(zone) then
+            teleportTO(game:GetService("Workspace").Zones[zone].ZevilZone.CFrame)
+    end
+    end
+    
+    teleportZone('ZevilZone')
+end)
+DurabilitySec:NewButton("Nen Dodgeball(1B Dur)", "400x Durability", function()
+    function teleportTO(placeCFrame)
+        local player = game.Players.LocalPlayer;
+        if player.Character then
+        player.Character.HumanoidRootPart.CFrame = placeCFrame;
+        end
+    end
+    teleportTO(game:GetService("Workspace").Zones.DodgeballZone.CFrame)
+    
+    function teleportZone(zone)
+        if game:GetService("Workspace").Zones:FindFirstChild(zone) then
+            teleportTO(game:GetService("Workspace").Zones[zone].DodgeballZone.CFrame)
+    end
+    end
+    
+    teleportZone('DodgeballZone')
+end)
+AgilitySec:NewButton("Running Path(1k Agi)", "5x Agility", function()
+    function teleportTO(placeCFrame)
+        local player = game.Players.LocalPlayer;
+        if player.Character then
+        player.Character.HumanoidRootPart.CFrame = placeCFrame;
+        end
+    end
+    teleportTO(game:GetService("Workspace").Zones.TrailZone.CFrame)
+    
+    function teleportZone(zone)
+        if game:GetService("Workspace").Zones:FindFirstChild(zone) then
+            teleportTO(game:GetService("Workspace").Zones[zone].TrailZone.CFrame)
+    end
+    end
+    
+    teleportZone('TrailZone')
+end)
+NenSec:NewButton("Mystical Willow Tree(No Req Nen)", "20x Nen", function()
+    function teleportTO(placeCFrame)
+        local player = game.Players.LocalPlayer;
+        if player.Character then
+        player.Character.HumanoidRootPart.CFrame = placeCFrame;
+        end
+    end
+    teleportTO(game:GetService("Workspace").Zones.WillowZone.CFrame)
+    
+    function teleportZone(zone)
+        if game:GetService("Workspace").Zones:FindFirstChild(zone) then
+            teleportTO(game:GetService("Workspace").Zones[zone].WillowZone.CFrame)
+    end
+    end
+    
+    teleportZone('WillowZone')
+end)
+NenSec:NewButton("Nostrade Garden(1M Nen)", "50x Nen", function()
+    function teleportTO(placeCFrame)
+        local player = game.Players.LocalPlayer;
+        if player.Character then
+        player.Character.HumanoidRootPart.CFrame = placeCFrame;
+        end
+    end
+    teleportTO(game:GetService("Workspace").Zones.MansionZone.CFrame)
+    
+    function teleportZone(zone)
+        if game:GetService("Workspace").Zones:FindFirstChild(zone) then
+            teleportTO(game:GetService("Workspace").Zones[zone].MansionZone.CFrame)
+    end
+    end
+    
+    teleportZone('MansionZone')
+end)
+NenSec:NewButton("Milsy Wetlands(50M Nen)", "100x Nen", function()
+    function teleportTO(placeCFrame)
+        local player = game.Players.LocalPlayer;
+        if player.Character then
+        player.Character.HumanoidRootPart.CFrame = placeCFrame;
+        end
+    end
+    teleportTO(game:GetService("Workspace").Zones.WetlandsZone.CFrame)
+    
+    function teleportZone(zone)
+        if game:GetService("Workspace").Zones:FindFirstChild(zone) then
+            teleportTO(game:GetService("Workspace").Zones[zone].WetlandsZone.CFrame)
+    end
+    end
+    
+    teleportZone('WetlandsZone')
+end)
+NenSec:NewButton("Greedy Badlands(1B Nen)", "400x Nen", function()
+    function teleportTO(placeCFrame)
+        local player = game.Players.LocalPlayer;
+        if player.Character then
+        player.Character.HumanoidRootPart.CFrame = placeCFrame;
+        end
+    end
+    teleportTO(game:GetService("Workspace").Zones.BadlandsZone.CFrame)
+    
+    function teleportZone(zone)
+        if game:GetService("Workspace").Zones:FindFirstChild(zone) then
+            teleportTO(game:GetService("Workspace").Zones[zone].BadlandsZone.CFrame)
+    end
+    end
+    
+    teleportZone('BadlandsZone')
+end)
